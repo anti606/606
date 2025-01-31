@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>606cult</title>
+    <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styling for the body */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            overflow: hidden;
+            position: relative;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* New page with members display */
+        .members-page {
+            display: block; /* Directly show the members page */
+            opacity: 1; /* Ensure it's visible immediately */
+            text-align: center;
+            background-color: #000;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            padding-top: 50px;
+        }
+
+        .ascii-art {
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            display: block; /* Show ASCII art */
+        }
+
+        .member {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .member a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .members-page h1.custom-heading {
+            font-size: 15px; /* Set your desired font size here */
+            color: white; 
+            white-space: pre;   /* Set color to white (or any color you prefer) */
+            text-align: center; /* Center align the text */
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 0.65; /* Prevents extra spacing between lines */
+            margin: 0;
+        }   
+    </style>
+</head>
+
+<body>
+    <!-- New page with members -->
+    <div class="members-page" id="members-page-content">
+        <h1 class="custom-heading">
+  __      ___     __   <br>
+ / /_    / _ \   / /_  <br>
+| '_ \  | | | | | '_ \ <br>
+| (_) | | |_| | | (_) |<br>
+ \___/   \___/   \___/ <br>
+        </h1>
+        <div class="member">
+            <img src="member1.png" alt="Hesa">
+            <a href="https://discord.dog/1218342046029447289">Hesa</a>
+        </div>
+        <div class="member">
+            <img src="member2.png" alt="Zua">
+            <a href="https://discord.dog/1073011548768964749">Zua</a>
+        </div>
+        <div class="member">
+            <img src="member3.jpg" alt="Anti">
+            <a href="https://t.me/extortingemos">Anti</a>
+        </div>
+        <!-- Add more members as needed -->
+        
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop volume="0.5">
+        <source src="music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+    function changeVolume(newVolume) {
+        audio.volume = newVolume;
+    }
+        const audio = document.getElementById('background-music');
+        audio.volume = 0.10;
+        document.body.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+        
+    </script>
+
+</body>
+
+</html>
