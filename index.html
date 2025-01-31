@@ -9,24 +9,29 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Styling for the body */
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-            overflow: hidden;
-            position: relative;
-            font-family: 'Arial', sans-serif;
-        }
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: white;
+        font-family: 'Minecraftia', sans-serif;
+        display: flex;
+        background-image: url('wallpaper.gif');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+}
 
         /* New page with members display */
         .members-page {
             display: block; /* Directly show the members page */
             opacity: 1; /* Ensure it's visible immediately */
             text-align: center;
-            background-color: #000;
+
             color: white;
             font-family: 'Arial', sans-serif;
             padding-top: 50px;
@@ -71,11 +76,43 @@
             font-family: 'Courier New', Courier, monospace;
             line-height: 0.65; /* Prevents extra spacing between lines */
             margin: 0;
-        }   
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Minecraftia', sans-serif;
+            font-size: 24px;
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        #bottom-left {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 0.5em;
+}
+        
+        
     </style>
 </head>
 
 <body>
+    <div id="overlay">
+        <div>
+            <p>Click to enter...</p>
+        </div>
+    </div>
+    
     <!-- New page with members -->
     <div class="members-page" id="members-page-content">
         <h1 class="custom-heading">
@@ -84,6 +121,7 @@
 | '_ \  | | | | | '_ \ <br>
 | (_) | | |_| | | (_) |<br>
  \___/   \___/   \___/ <br>
+ discord.gg/swatcall 
         </h1>
         <div class="member">
             <img src="member1.png" alt="Hesa">
@@ -101,25 +139,24 @@
         
     </div>
 
+    <div id="bottom-left">
+        © <a href="https://t.me/cult606" target="_blank" style="color:white; text-decoration: none;">606 cult</a> 
+    </div>
+
     <!-- Background Music -->
     <audio id="background-music" autoplay loop volume="0.5">
         <source src="music.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
-    <script>
-    function changeVolume(newVolume) {
-        audio.volume = newVolume;
-    }
-        const audio = document.getElementById('background-music');
-        audio.volume = 0.10;
-        document.body.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-            }
-        });
-        
-    </script>
+<script>
+    document.getElementById("overlay").addEventListener("click", function() {
+        document.getElementById("overlay").style.display = "none";
+        var audio = new Audio('music.mp3');
+        audio.volume = 0.3;
+        audio.play();
+    });
+</script>
 
 </body>
 
